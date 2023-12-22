@@ -1,0 +1,32 @@
+Terraform Flow:
+1. Write config
+2. "terraform init" <-- only needs to happen once. Will create a .terraform directory with needed resources
+3. "terraform fmt" <-- formats the file correctly
+4. "terraform validate" <-- Optional, validates that the config files are correctly formatted
+5. "terraform plan" <-- shows what will happen when deployed (e.g. what will be created, changed, destroyed)
+6. "terraform apply" <-- pushes config to cloud
+7. "terraform state list" <-- shows current state of what is deployed
+8. "terraform state show <resource name> <-- shows details about a specific resource
+
+THINGS LEARNED:
+- Public IP address needs to be attatched to NIC-- see NIC resource block
+- ssh key can be used, but needs to be generated manually-- see vm resource block
+- the file(<path to file>) function can be used in Terraform to specify a file
+
+Custom data: a custom startup script can be ran in a customdata.tpl file.
+    - the filebase64(<path to file>) function converts the file to base64 which is what Azure needs for a custom data config
+    - When using a privisioner, you can refer to variable in some code. Use self.<variable name> to call those. The variable will be from the state file <-- see azurevm resource block
+        - Provisioners aren't picked up by the state file. So a resourec will have to be replaced if this is used: "terraform apply -replace <resource name>"
+
+variables:
+    - Declaring a type is best practice
+    - using a default values helps keeps things dynamic
+
+terraform.tfvars:
+    - A way to define variable but is typically more sensitive
+    - Formatting is different. These variables will take presidence a variables.tf file
+    - From the command line, you can include "-var=<variable name>=<input>"-- this will take presidence over those defined in files
+
+Conditionals: line 128
+    - Example: var.host_os == "windows" ? "powershell" : "bash"
+    - Explanation: If the variable host.os is "windows", then powershell will be the default value, if not then bash will be default
