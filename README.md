@@ -13,3 +13,4 @@ Intentionally utilizes Terraform concepts like variables, output, and running a 
 # Usage:
 - Ensure SSH keys are generated >> ssh-keygen -t rsa
 - Default save location will be C:\Users\<username>\.ssh\<keyname>
+- Update key names in lines 107 & 126 to your ssh key name
