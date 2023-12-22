@@ -1,5 +1,5 @@
 # tf-dev-environment
-Simple project to create a Linux dev environment with docker provisioned.
+Simple project using Terraform in Azure to create a Linux dev environment provisioned with Azure. Designed to use the Remote-SSH VSCode extension as the method of connecting, developing, and testing.
 
 Intentionally utilizes Terraform concepts like variables, output, and running a startup script for provisioning.
 
