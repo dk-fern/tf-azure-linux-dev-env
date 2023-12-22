@@ -101,7 +101,7 @@ resource "azurerm_linux_virtual_machine" "linuxvm" {
 
   custom_data = filebase64("customdata.tpl")
 
-  # create keypair: ssh-keygen -t rsa -- saved to C:\Users\fernandezd/.ssh/terraformpracticekey
+  # create keypair: ssh-keygen -t rsa -- saved to C:\Users\<username>/.ssh/terraformpracticekey
   admin_ssh_key {
     username   = "adminuser"
     public_key = file("~/.ssh/terraformpracticekey.pub")
