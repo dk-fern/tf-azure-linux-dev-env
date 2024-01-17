@@ -1,6 +1,3 @@
-# Config needs: 
-# Resource Group, VM, Public IP, NSG, VNet, subnet, Nic, Disk
-
 # Configure the Azure provider
 terraform {
   required_providers {
