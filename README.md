@@ -7,11 +7,11 @@ This project intentionally utilizes Terraform concepts like:
 - running a startup script for provisioning.
 
 ### _Features_ ###
-- (Main file)[main.tf]
-- (Variable files)[variables.tf]
-- (Output file)[output.tf]
-- (A bash script)[customdata.tpl] for installing Docker upon startup
-- (A windows script([windows-ssh-script.tpl] to add ssh info to the Remote-SSH (VS Code Extension)
+- [Main file](main.tf)
+- [Variable files](variables.tf)
+- [Output file](output.tf)
+- [A bash script](customdata.tpl) for installing Docker upon startup
+- [A windows script](windows-ssh-script.tpl) to add ssh info to the Remote-SSH (VS Code Extension)
 
 ### _Usage:_ ###
 1. Ensure SSH keys are generated >> ssh-keygen -t rsa
